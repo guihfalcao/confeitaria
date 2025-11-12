@@ -21,7 +21,9 @@ header h1 {
 h1 {  
   margin-bottom: 20px;
 }
-
+h2 {
+  text-align: center;
+}
 nav ul {
   list-style: none;
   text-align: center;
@@ -41,4 +43,9 @@ img {
 .sobre-nos{
   width:80%;
   text-align: center;
+}
+
+.paragrafo-texto{
+  font-size: 20px;
+  text-align: justify;
 }
