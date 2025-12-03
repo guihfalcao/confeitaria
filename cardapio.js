@@ -33,3 +33,25 @@ criarItemCardapio(
     'Um clássico irresistível com camadas de chocolate', 
     'https://www.comidaereceitas.com.br/img/sizeswp/1200x675/2020/05/bolo_chocolate_leite.jpg'
 )
+
+async function buscarBolos() {
+  try {
+    const resposta = await fetch("https://confeitaria-api-rt0j.onrender.com/cardapio");
+
+    // Verifica se a requisição deu certo
+    if (!resposta.ok) {
+      throw new Error(`Erro na requisição: ${resposta.status}`);
+    }
+
+    // Converte para JSON
+    const dados = await resposta.json();
+    console.log("Lista de bolos:", dados);
+
+    return dados;
+  } catch (erro) {
+    console.error("Erro ao buscar os bolos:", erro);
+  }
+}
+
+// Exemplo de uso:
+buscarBolos();
